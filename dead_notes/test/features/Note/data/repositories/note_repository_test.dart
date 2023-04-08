@@ -7,7 +7,7 @@ import 'package:dead_notes/features/Note/data/datasources/i_local_datasource.dar
 import 'package:dead_notes/features/Note/data/repositories/note_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../testing_helpers.dart';
+import '../../../../testing_helpers.dart';
 
 class MockLocalDatasource extends Mock implements ILocalDatasource {}
 
