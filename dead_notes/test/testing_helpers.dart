@@ -1,10 +1,10 @@
 // ignore_for_file: prefer_const_declarations, prefer_const_constructors
 import 'package:flutter/material.dart';
-import 'package:dead_notes/src/data/models/note_model.dart';
-import 'package:dead_notes/src/domain/entities/note.dart';
-import 'package:dead_notes/src/domain/usecases/add_note.dart';
-import 'package:dead_notes/src/domain/usecases/delete_note.dart';
-import 'package:dead_notes/src/domain/usecases/edit_note.dart';
+import 'package:dead_notes/features/Note/data/models/note_model.dart';
+import 'package:dead_notes/features/Note/domain/entities/note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/add_note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/delete_note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';
 
 // DateTime setup
 final tDateTimeMilliseconds = 1000000;

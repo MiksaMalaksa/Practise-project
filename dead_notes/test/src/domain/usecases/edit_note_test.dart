@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dead_notes/src/core/failures/data_failure.dart';
-import 'package:dead_notes/src/core/nothing/nothing.dart';
-import 'package:dead_notes/src/domain/repositories/i_note_repository.dart';
-import 'package:dead_notes/src/domain/usecases/edit_note.dart';
+import 'package:dead_notes/core/failures/data_failure.dart';
+import 'package:dead_notes/core/nothing/nothing.dart';
+import 'package:dead_notes/features/Note/domain/repositories/i_note_repository.dart';
+import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../testing_helpers.dart';

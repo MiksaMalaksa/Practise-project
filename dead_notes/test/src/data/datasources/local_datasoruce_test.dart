@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:dead_notes/src/core/exceptions/exceptions.dart';
-import 'package:dead_notes/src/data/datasources/local_datasource.dart';
+import 'package:dead_notes/core/exceptions/exceptions.dart';
+import 'package:dead_notes/features/Note/data/datasources/local_datasource.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../testing_helpers.dart';

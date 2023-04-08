@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dead_notes/src/core/exceptions/exceptions.dart';
-import 'package:dead_notes/src/core/failures/data_failure.dart';
-import 'package:dead_notes/src/core/nothing/nothing.dart';
-import 'package:dead_notes/src/data/datasources/i_local_datasource.dart';
-import 'package:dead_notes/src/data/repositories/note_repository.dart';
+import 'package:dead_notes/core/exceptions/exceptions.dart';
+import 'package:dead_notes/core/failures/data_failure.dart';
+import 'package:dead_notes/core/nothing/nothing.dart';
+import 'package:dead_notes/features/Note/data/datasources/i_local_datasource.dart';
+import 'package:dead_notes/features/Note/data/repositories/note_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../../testing_helpers.dart';

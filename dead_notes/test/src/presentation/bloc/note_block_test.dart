@@ -1,15 +1,15 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:dead_notes/src/core/failures/data_failure.dart';
-import 'package:dead_notes/src/core/failures/invalid_note_failure.dart';
-import 'package:dead_notes/src/core/nothing/nothing.dart';
-import 'package:dead_notes/src/core/usecases/no_params.dart';
-import 'package:dead_notes/src/core/util/input_validator.dart';
-import 'package:dead_notes/src/domain/usecases/add_note.dart';
-import 'package:dead_notes/src/domain/usecases/delete_note.dart';
-import 'package:dead_notes/src/domain/usecases/edit_note.dart';
-import 'package:dead_notes/src/domain/usecases/get_notes.dart';
-import 'package:dead_notes/src/presentation/blocs/note_bloc.dart';
+import 'package:dead_notes/core/failures/data_failure.dart';
+import 'package:dead_notes/core/failures/invalid_note_failure.dart';
+import 'package:dead_notes/core/nothing/nothing.dart';
+import 'package:dead_notes/core/usecases/no_params.dart';
+import 'package:dead_notes/core/util/input_validator.dart';
+import 'package:dead_notes/features/Note/domain/usecases/add_note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/delete_note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';
+import 'package:dead_notes/features/Note/domain/usecases/get_notes.dart';
+import 'package:dead_notes/features/Note/presentation/blocs/note_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:uuid/uuid.dart';
 
