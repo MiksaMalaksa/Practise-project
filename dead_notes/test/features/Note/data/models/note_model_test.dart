@@ -2,7 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:dead_notes/features/Note/data/models/note_model.dart';
 import 'package:dead_notes/features/Note/domain/entities/note.dart';
 
-import '../../../../testing_helpers.dart';
+import '../../testing_helpers.dart';
 
 void main() {
   group('NoteModel group', () {

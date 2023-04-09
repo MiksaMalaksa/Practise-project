@@ -13,7 +13,7 @@ import 'package:dead_notes/features/Note/presentation/blocs/note_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:uuid/uuid.dart';
 
-import '../../../../testing_helpers.dart';
+import '../../testing_helpers.dart';
 
 class MockAddNote extends Mock implements AddNote {}
 

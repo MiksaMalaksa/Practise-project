@@ -4,7 +4,7 @@ import 'package:dead_notes/core/exceptions/exceptions.dart';
 import 'package:dead_notes/features/Note/data/datasources/local_datasource.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../../testing_helpers.dart';
+import '../../testing_helpers.dart';
 
 class MockBox extends Mock implements Box {}
 

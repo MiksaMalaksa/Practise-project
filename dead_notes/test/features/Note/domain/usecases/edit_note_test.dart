@@ -6,7 +6,7 @@ import 'package:dead_notes/features/Note/domain/repositories/i_note_repository.d
 import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../../../testing_helpers.dart';
+import '../../testing_helpers.dart';
 
 class MockNoteRepository extends Mock implements INoteRepository {}
 
