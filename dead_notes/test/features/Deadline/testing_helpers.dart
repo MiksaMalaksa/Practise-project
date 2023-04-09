@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-//import 'package:dead_notes/features/Deadline/data/models/deadline_model.dart';
+import 'dart:io';
+import 'package:dead_notes/features/Deadline/data/models/deadline_model.dart';
 import 'package:dead_notes/features/Deadline/domain/entities/deadline.dart';
 import 'package:dead_notes/features/Deadline/domain/usecases/add_deadline.dart';
 import 'package:dead_notes/features/Deadline/domain/usecases/delete_deadline.dart';
@@ -35,4 +36,27 @@ final tDeadline = Deadline(
     deadlineTime: tDeadlineDateTime,
     tasks: tDeadlineTasks,
     isFavorite: tDeadlineIsFavorite,
-    color: tDeadlineColor);
+    color: tDeadlineColor
+);
+
+final tDeadlineList = [tDeadline];
+
+// Model setup
+final tDeadlineModelJson = tDeadlineModel.toJson();
+
+// Model impl
+final tDeadlineModel = DeadlineModel(
+  id: tDeadlineId,
+  title: tDeadlineTitle,
+  text: tDeadlineText,
+  creationTime: tCreationDateTime,
+  deadlineTime: tDeadlineDateTime,
+  tasks: tDeadlineTasks,
+  isFavorite: tDeadlineIsFavorite,
+  color: tDeadlineColor
+);
+
+final tDeadlineModelList = [tDeadlineModel];
+
+// Box setup
+final tDeadlineModelJsonList = [tDeadlineModelJson];

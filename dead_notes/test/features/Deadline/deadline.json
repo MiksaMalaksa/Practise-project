@@ -1,0 +1,14 @@
+{
+    "id": "test_note_id",
+    "title": "test_title",
+    "text": "test_text",
+    "creationTime": 1000000,
+    "deadlineTime": 2000000,
+    "tasks": [
+        {
+            "text": "test_text",
+            "isDone": false
+        }
+    ],
+    "isFavorite": false
+}
