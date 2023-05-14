@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:dead_notes/core/failures/invalid_note_failure.dart';
-import 'package:dead_notes/core/util/input_validator.dart';
+import 'package:dead_notes/features/Note/util/input_validator.dart';
 
 import '../../features/Note/testing_helpers.dart';
 

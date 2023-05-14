@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:dead_notes/core/usecases/no_params.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:dead_notes/core/util/input_validator.dart';
+import 'package:dead_notes/features/Note/util/input_validator.dart';
 import 'package:dead_notes/features/Note/domain/entities/note.dart';
 import 'package:dead_notes/features/Note/domain/usecases/delete_note.dart';
 import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';

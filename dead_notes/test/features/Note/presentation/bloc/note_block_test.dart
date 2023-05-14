@@ -4,7 +4,7 @@ import 'package:dead_notes/core/failures/data_failure.dart';
 import 'package:dead_notes/core/failures/invalid_note_failure.dart';
 import 'package:dead_notes/core/nothing/nothing.dart';
 import 'package:dead_notes/core/usecases/no_params.dart';
-import 'package:dead_notes/core/util/input_validator.dart';
+import 'package:dead_notes/features/Note/util/input_validator.dart';
 import 'package:dead_notes/features/Note/domain/usecases/add_note.dart';
 import 'package:dead_notes/features/Note/domain/usecases/delete_note.dart';
 import 'package:dead_notes/features/Note/domain/usecases/edit_note.dart';
