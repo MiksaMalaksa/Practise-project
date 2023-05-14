@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dead_notes">
-   <application
-        android:label="dead_notes"
+    package="com.example.ui_start">
+    <application
+        android:label="ui_start"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

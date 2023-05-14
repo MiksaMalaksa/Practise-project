@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:dead_notes/features/Note/config/box_setup.dart';
-import 'package:dead_notes/core/util/input_validator.dart';
+import 'package:dead_notes/features/Note/util/input_validator.dart';
 import 'package:dead_notes/features/Note/data/datasources/i_local_datasource.dart';
 import 'package:dead_notes/features/Note/data/datasources/local_datasource.dart';
 import 'package:dead_notes/features/Note/data/repositories/note_repository.dart';
