@@ -1,4 +1,4 @@
-# ui_start
+# dead_notes
 
 A new Flutter project.
 

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "ui_start" "\0"
+            VALUE "FileDescription", "dead_notes" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "ui_start" "\0"
+            VALUE "InternalName", "dead_notes" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2023 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "ui_start.exe" "\0"
-            VALUE "ProductName", "ui_start" "\0"
+            VALUE "OriginalFilename", "dead_notes.exe" "\0"
+            VALUE "ProductName", "dead_notes" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

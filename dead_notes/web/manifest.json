@@ -1,6 +1,6 @@
 {
-    "name": "ui_start",
-    "short_name": "ui_start",
+    "name": "dead_notes",
+    "short_name": "dead_notes",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
