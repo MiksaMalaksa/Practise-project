@@ -1,4 +1,5 @@
 import 'package:dead_notes/features/Home/presentation/view/home_page.dart';
+import 'package:dead_notes/features/Settings/presentation/view/settings_page.dart';
 import 'package:dead_notes/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -13,6 +14,10 @@ class _ManagerPageState extends State<ManagerPage> {
   //?list of pages
   final List<Widget> _pages = [
     HomePage(),
+    HomePage(),
+    HomePage(),
+    HomePage(),
+    SettingsPage(),
     /*DeadlinePage(),
     FastAction(),
     NotesPage(),
@@ -33,7 +38,7 @@ class _ManagerPageState extends State<ManagerPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: HomePage(),
+      body: _pages[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
         //*customi

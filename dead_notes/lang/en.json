@@ -1,3 +1,14 @@
 {
-  "home": "Home"
+  "home": "Home",
+  "overview": "Overview",
+  "finished_in_time": "Finished in time",
+  "deadlines_failed": "Deadlines failed",
+  "success_rate": "Success rate",
+  "average_time": "Average time",
+  "pinned": "Pinned",
+  "days": "Days",
+  "theme": "Theme",
+  "color": "Color",
+  "language": "Language",
+  "settings": "Settings"
 }

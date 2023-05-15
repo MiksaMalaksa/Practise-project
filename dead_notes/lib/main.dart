@@ -16,14 +16,16 @@ class NoteApp extends StatefulWidget {
 
   @override
   NoteAppState createState() => NoteAppState();
+
+  static NoteAppState? of(BuildContext context) => context.findAncestorStateOfType<NoteAppState>();
 }
 
 class NoteAppState extends State<NoteApp> {
-  Locale _locale = const Locale('ru');
+  Locale locale = const Locale('en');
 
   void setLocale(Locale value) {
     setState(() {
-      _locale = value;
+      locale = value;
     });
   }
 
@@ -48,7 +50,7 @@ class NoteAppState extends State<NoteApp> {
                 primarySwatch: AppColors.getMaterialColorFromColor(themeProvider.selectedPrimaryColor),
                 primaryColor: themeProvider.selectedPrimaryColor,
               ),
-              locale: _locale,
+              locale: locale,
               supportedLocales: const [Locale('ru'), Locale('en')],
               localizationsDelegates: const [
                 AppLocalizations.delegate,

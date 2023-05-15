@@ -1,3 +1,14 @@
 {
-  "home": "Главная"
+  "home": "Главная",
+  "overview": "Обзор",
+  "finished_in_time": "Закончено в срок",
+  "deadlines_failed": "Сроки не соблюдены",
+  "success_rate": "Показатель успеха",
+  "average_time": "Среднее время",
+  "pinned": "Закрепленные",
+  "days": "Дней",
+  "theme": "Тема",
+  "color": "Цвет",
+  "language": "Язык",
+  "settings": "Настройки"
 }

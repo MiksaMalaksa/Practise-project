@@ -21,16 +21,18 @@ class AppThemeData {
       tertiary: Colors.deepPurpleAccent,
     ),
     iconTheme: const IconThemeData(
-      color: Colors.white,
+      color: Colors.black,
     ),
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         color: Color(0xff3d5a80),
-        fontSize: 20.0,
+        fontSize: 28.0,
+        fontFamily: 'Nunito',
       ),
       titleMedium: TextStyle(
         color: Color(0xff3d5a80),
-        fontSize: 14.0,
+        fontSize: 16.0,
+        fontFamily: 'Nunito',
       ),
       bodyLarge: TextStyle(
         color: Colors.white,
@@ -66,11 +68,13 @@ class AppThemeData {
     textTheme: const TextTheme(
       titleLarge: TextStyle(
         color: Colors.white,
-        fontSize: 20.0,
+        fontSize: 28.0,
+        fontFamily: 'Nunito',
       ),
       titleMedium: TextStyle(
         color: Colors.white,
-        fontSize: 14.0,
+        fontSize: 16.0,
+        fontFamily: 'Nunito',
       ),
       bodyLarge: TextStyle(
         color: Colors.white,
