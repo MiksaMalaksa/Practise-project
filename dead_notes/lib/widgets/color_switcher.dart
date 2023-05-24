@@ -2,9 +2,10 @@ import 'package:dead_notes/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class ColorSwitcher extends StatefulWidget {
+  final Color? selectedColor;
   Function(Color)? onChange;
 
-   ColorSwitcher({super.key, this.onChange});
+   ColorSwitcher({super.key, this.selectedColor, this.onChange});
 
   @override
   ColorSwitcherState createState() => ColorSwitcherState();
@@ -12,6 +13,17 @@ class ColorSwitcher extends StatefulWidget {
 
 class ColorSwitcherState extends State<ColorSwitcher> {
   int _selectedColorIndex = 0;
+
+  @override
+  void initState() {
+    if (widget.selectedColor != null) {
+      _selectedColorIndex = AppColors.primaryColors.indexWhere((e) => e.value == widget.selectedColor!.value);
+      if (_selectedColorIndex == -1) {
+        _selectedColorIndex = 0;
+      }
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -1,4 +1,5 @@
 import 'package:dead_notes/features/Deadline/presentation/blocs/deadline_bloc.dart';
+import 'package:dead_notes/features/Deadline/presentation/view/deadline_page.dart';
 import 'package:dead_notes/features/injection.dart';
 import 'package:dead_notes/localization/app_localization_constants.dart';
 import 'package:dead_notes/widgets/top_bar.dart';
@@ -83,22 +84,31 @@ class DeadlineListPageState extends State<DeadlineListPage> {
                     child: const Icon(Icons.delete, color: Colors.white),
                   ),
                 ),
-                child: Container(
-                  margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                  width: MediaQuery.of(context).size.width,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
-                    color: state.deadlines[index].color
-                  ),
-                  child: Row(
-                    children: [
-                      deadline.isFavorite ? const Padding(
-                        padding: EdgeInsets.only(right: 10),
-                        child: Icon(Icons.flag, color: Colors.white),
-                      ) : Container(),
-                      Expanded(child: Text(deadline.title)),
-                    ],
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => DeadlinePage(deadline: deadline,))).then((value) => _bloc.add(const GetDeadlinesEvent()));
+                  },
+                  child: Container(
+                    margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: deadline.color
+                    ),
+                    child: Row(
+                      children: [
+                        deadline.isFavorite ? const Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(Icons.flag, color: Colors.white),
+                        ) : Container(),
+                        deadline.tasks.where((e) => !e.isDone).isEmpty ? const Padding(
+                          padding: EdgeInsets.only(right: 10),
+                          child: Icon(Icons.check, color: Colors.white),
+                        ) : Container(),
+                        Expanded(child: Text(deadline.title)),
+                      ],
+                    ),
                   ),
                 )
               );

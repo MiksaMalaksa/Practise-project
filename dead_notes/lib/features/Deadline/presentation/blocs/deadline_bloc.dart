@@ -66,7 +66,7 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
         final result = await addDeadline(AddDeadlineParams(deadline));
 
         await result.fold(
-          (_) async => emit(const Error(error: addError)),
+          (_) async => emit(Error(error: addError)),
           (_) async {
             add(const GetDeadlinesEvent());
           },
@@ -130,12 +130,12 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
             }
           },
         );
-        deadlines.sort((a, b) {
+        /*deadlines.sort((a, b) {
           if(b.isFavorite) {
             return 1;
           }
           return -1;
-        });
+        });*/
         emit(Loaded(deadlines: deadlines));
       },
     );

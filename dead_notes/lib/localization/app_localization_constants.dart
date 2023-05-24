@@ -128,3 +128,15 @@ String notePinnedLocalize(BuildContext context) {
 String notesLocalize(BuildContext context) {
   return AppLocalizations.of(context).translate('notes');
 }
+
+String cancelLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('cancel');
+}
+
+String addOneTaskLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('add_one_task');
+}
+
+String deadlineUpdatedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline_updated');
+}
