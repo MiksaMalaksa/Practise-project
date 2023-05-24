@@ -45,7 +45,7 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
     on<EditNoteEvent>(_onEditNoteEvent);
     on<GetNotesEvent>(_onGetNotesEvent);
 
-    add(const GetNotesEvent());
+    //add(const GetNotesEvent());
   }
 
   Future<void> _onAddNoteEvent(

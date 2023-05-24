@@ -1,5 +1,6 @@
 import 'package:dead_notes/features/Home/presentation/view/home_page.dart';
 import 'package:dead_notes/features/Settings/presentation/view/settings_page.dart';
+import 'package:dead_notes/selector_page.dart';
 import 'package:dead_notes/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -15,7 +16,7 @@ class _ManagerPageState extends State<ManagerPage> {
   final List<Widget> _pages = [
     HomePage(),
     HomePage(),
-    HomePage(),
+    SelectorPage(),
     HomePage(),
     SettingsPage(),
     /*DeadlinePage(),

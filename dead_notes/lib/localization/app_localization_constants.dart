@@ -52,3 +52,47 @@ String languageLocalize(BuildContext context) {
 String settingsLocalize(BuildContext context) {
   return AppLocalizations.of(context).translate('settings');
 }
+
+String deadlineLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline');
+}
+
+String newLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('new');
+}
+
+String titleLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('title');
+}
+
+String descriptionLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('description');
+}
+
+String deadlineDayLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline_day');
+}
+
+String addTaskLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('add_task');
+}
+
+String newTaskLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('new_task');
+}
+
+String saveLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('save');
+}
+
+String selectOptionLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('select_option');
+}
+
+String noteLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('note');
+}
+
+String selectColorLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('select_color');
+}

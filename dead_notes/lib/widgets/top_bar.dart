@@ -13,6 +13,7 @@ class TopBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: Text(title, style: Theme.of(context).textTheme.titleLarge,),
       backgroundColor: Colors.transparent,
+      automaticallyImplyLeading: false,
       elevation: 0,
     );
   }

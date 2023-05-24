@@ -10,5 +10,16 @@
   "theme": "Theme",
   "color": "Color",
   "language": "Language",
-  "settings": "Settings"
+  "settings": "Settings",
+  "deadline": "Deadline",
+  "new": "New",
+  "title": "Title",
+  "description": "Description",
+  "deadline_day": "Deadline day",
+  "add_task": "Add task",
+  "new_task": "New task",
+  "save": "Save",
+  "select_option": "Select option",
+  "note": "Note",
+  "select_color": "Select deadline color"
 }

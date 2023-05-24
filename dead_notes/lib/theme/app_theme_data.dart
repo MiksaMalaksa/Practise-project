@@ -34,13 +34,9 @@ class AppThemeData {
         fontSize: 16.0,
         fontFamily: 'Nunito',
       ),
-      bodyLarge: TextStyle(
-        color: Colors.white,
-        fontSize: 20.0,
-      ),
       bodyMedium: TextStyle(
         color: Colors.white,
-        fontSize: 14.0,
+        fontSize: 16.0,
       ),
     ),
   );
@@ -76,13 +72,9 @@ class AppThemeData {
         fontSize: 16.0,
         fontFamily: 'Nunito',
       ),
-      bodyLarge: TextStyle(
-        color: Colors.white,
-        fontSize: 20.0,
-      ),
       bodyMedium: TextStyle(
         color: Colors.white,
-        fontSize: 14.0,
+        fontSize: 16.0,
       ),
     ),
   );

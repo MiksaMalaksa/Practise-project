@@ -1,3 +1,4 @@
+import 'package:dead_notes/features/Deadline/util/input_deadline_validator.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:dead_notes/features/Note/config/box_setup.dart';
@@ -19,6 +20,7 @@ Future<void> init() async {
   // * CORE
   // Utils
   sl.registerSingleton(InputValidator());
+  sl.registerSingleton(InputDeadlineValidator());
 
   // * EXTERNAL
   // Hive
