@@ -8,8 +8,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
+import 'features/injection.dart';
 
-void main() {
+void main() async {
+  await init();
   runApp(const NoteApp());
 }
 
@@ -29,6 +31,11 @@ class NoteAppState extends State<NoteApp> {
     setState(() {
       locale = value;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
   }
 
   @override
@@ -60,12 +67,7 @@ class NoteAppState extends State<NoteApp> {
                 GlobalWidgetsLocalizations.delegate,
                 GlobalCupertinoLocalizations.delegate,
               ],
-              home: MultiBlocProvider(
-                providers: [
-                  BlocProvider<DeadlineBloc>(create: (BuildContext context) => DeadlineBloc(addDeadline: addDeadline, deleteDeadline: deleteDeadline, editDeadline: editDeadline, getDeadlines: getDeadlines, inputValidator: inputValidator, uuid: uuid))
-                ],
-                child: const ManagerPage(),
-              ),
+              home: const ManagerPage(),
             );
           }
       ),

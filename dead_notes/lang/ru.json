@@ -21,5 +21,13 @@
   "save": "Сохранить",
   "select_option": "Выберите опцию",
   "note": "Заметка",
-  "select_color": "Выберите цвет дедлайна"
+  "select_color": "Выберите цвет",
+  "new_deadline_added": "Новый дедлайн добавлен",
+  "deadline_removed": "Дедлайн удален",
+  "deadline_pinned": "Дедлайн закреплен/откреплен",
+  "deadlines": "Дедлайны",
+  "new_note_added": "Новая заметка добавлена",
+  "note_removed": "Заметка удалена",
+  "note_pinned": "Заметка закреплена/откреплена",
+  "notes": "Заметки"
 }

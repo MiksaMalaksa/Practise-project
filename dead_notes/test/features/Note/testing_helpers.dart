@@ -17,6 +17,7 @@ final tNoteDateTime =
     DateTime.fromMillisecondsSinceEpoch(tDateTimeMilliseconds);
 final tNoteIsFavorite = false;
 final tNoteColor = Colors.black;
+final tCreationTime = DateTime.now();
 
 // Note impl
 final tNote = Note(

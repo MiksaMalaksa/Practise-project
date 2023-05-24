@@ -96,3 +96,35 @@ String noteLocalize(BuildContext context) {
 String selectColorLocalize(BuildContext context) {
   return AppLocalizations.of(context).translate('select_color');
 }
+
+String newDeadlineAddedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('new_deadline_added');
+}
+
+String deadlineRemovedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline_removed');
+}
+
+String deadlinePinnedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline_pinned');
+}
+
+String deadlinesLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadlines');
+}
+
+String newNoteAddedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('new_note_added');
+}
+
+String noteRemovedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('note_removed');
+}
+
+String notePinnedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('note_pinned');
+}
+
+String notesLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('notes');
+}

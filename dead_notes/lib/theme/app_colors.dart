@@ -6,7 +6,7 @@ class AppColors {
     Colors.green,
     Colors.grey,
     Colors.purple,
-    Colors.orange,
+    Colors.orange
   ];
 
   static Color getShade(Color color, {bool darker = false, double value = .1}) {

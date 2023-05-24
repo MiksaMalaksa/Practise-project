@@ -1,4 +1,6 @@
+import 'package:dead_notes/features/Deadline/presentation/view/deadline_list_page.dart';
 import 'package:dead_notes/features/Home/presentation/view/home_page.dart';
+import 'package:dead_notes/features/Note/presentation/view/note_list_page.dart';
 import 'package:dead_notes/features/Settings/presentation/view/settings_page.dart';
 import 'package:dead_notes/selector_page.dart';
 import 'package:dead_notes/widgets/widgets.dart';
@@ -15,14 +17,10 @@ class _ManagerPageState extends State<ManagerPage> {
   //?list of pages
   final List<Widget> _pages = [
     HomePage(),
-    HomePage(),
+    DeadlineListPage(),
     SelectorPage(),
-    HomePage(),
+    NoteListPage(),
     SettingsPage(),
-    /*DeadlinePage(),
-    FastAction(),
-    NotesPage(),
-    SettingsPage(),*/
   ];
 
   //!switch index

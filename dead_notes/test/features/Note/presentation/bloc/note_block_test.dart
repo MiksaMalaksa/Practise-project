@@ -12,6 +12,7 @@ import 'package:dead_notes/features/Note/domain/usecases/get_notes.dart';
 import 'package:dead_notes/features/Note/presentation/blocs/note_bloc.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:uuid/uuid.dart';
+import 'package:dead_notes/features/Note/domain/repositories/i_note_repository.dart';
 
 import '../../testing_helpers.dart';
 
@@ -102,7 +103,7 @@ void main() {
               .thenAnswer((invocation) async => Right(tNoteList));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
           await untilCalled(() => mockInputValidator.validateNote(any()));
           // assert
@@ -128,7 +129,7 @@ void main() {
           expectLater(bloc.stream, emitsInOrder(expected));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
         },
       );
@@ -146,7 +147,7 @@ void main() {
               .thenAnswer((invocation) async => Right(tNoteList));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
           await untilCalled(() => mockAddNote(any()));
           // assert
@@ -172,7 +173,7 @@ void main() {
           expectLater(bloc.stream, emitsInOrder(expected));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
         },
       );
@@ -190,7 +191,7 @@ void main() {
               .thenAnswer((invocation) async => Right(tNoteList));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
           await untilCalled(() => mockGetNotes(NoParams()));
           // assert later
@@ -216,7 +217,7 @@ void main() {
           expectLater(bloc.stream, emitsInOrder(expected));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
         },
       );
@@ -239,7 +240,7 @@ void main() {
           expectLater(bloc.stream, emitsInOrder(expected));
           // act
           bloc.add(
-            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor),
+            AddNoteEvent(title: tNoteTitle, text: tNoteText, color: tNoteColor, creationTime: tCreationTime),
           );
         },
       );

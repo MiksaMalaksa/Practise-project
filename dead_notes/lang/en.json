@@ -21,5 +21,13 @@
   "save": "Save",
   "select_option": "Select option",
   "note": "Note",
-  "select_color": "Select deadline color"
+  "select_color": "Select color",
+  "new_deadline_added": "New deadline was added",
+  "deadline_removed": "Deadline was removed",
+  "deadline_pinned": "Deadline was pinned/unpinned",
+  "deadlines": "Deadlines",
+  "new_note_added": "New note was added",
+  "note_removed": "Note was removed",
+  "note_pinned": "Note was pinned/unpinned",
+  "notes": "Notes"
 }

@@ -1,6 +1,6 @@
 part of 'deadline_bloc.dart';
 
-abstract class DeadlineState extends Equatable {
+abstract class DeadlineState {
   const DeadlineState();
 
   @override

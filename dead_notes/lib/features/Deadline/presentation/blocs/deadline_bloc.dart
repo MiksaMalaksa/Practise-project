@@ -41,8 +41,6 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
     on<DeleteDeadlineEvent>(_onDeleteDeadlineEvent);
     on<EditDeadlineEvent>(_onEditDeadlineEvent);
     on<GetDeadlinesEvent>(_onGetDeadlinesEvent);
-
-    add(const GetDeadlinesEvent());
   }
 
   Future<void> _onAddDeadlineEvent(
@@ -51,7 +49,7 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
       id: uuid.v1(),
       title: event.title,
       text: event.text,
-      creationTime: DateTime.now(),
+      creationTime: event.creationTime,
       deadlineTime: event.deadlineTime,
       tasks: event.tasks,
       isFavorite: false,
@@ -61,7 +59,9 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
     final inputEither = inputValidator.validateDeadline(newDeadline);
 
     await inputEither.fold(
-      (_) async => emit(const Error(error: inputError)),
+      (_) async {
+        emit(Error(error: inputError));
+      },
       (deadline) async {
         final result = await addDeadline(AddDeadlineParams(deadline));
 
@@ -130,6 +130,12 @@ class DeadlineBloc extends Bloc<DeadlineEvent, DeadlineState> {
             }
           },
         );
+        deadlines.sort((a, b) {
+          if(b.isFavorite) {
+            return 1;
+          }
+          return -1;
+        });
         emit(Loaded(deadlines: deadlines));
       },
     );

@@ -45,7 +45,7 @@ class Task extends Equatable {
 
   const Task({
     required this.text,
-    required this.isDone,
+    this.isDone = false,
   });
 
   @override

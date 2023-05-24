@@ -11,6 +11,7 @@ class AddDeadlineEvent extends DeadlineEvent {
   final String title;
   final String text;
   final DateTime deadlineTime;
+  final DateTime creationTime;
   final List<Task> tasks;
   final Color color;
 
@@ -18,12 +19,13 @@ class AddDeadlineEvent extends DeadlineEvent {
     required this.title,
     required this.text,
     required this.deadlineTime,
+    required this.creationTime,
     required this.tasks,
     required this.color,
   });
 
   @override
-  List<Object> get props => [title, text, deadlineTime, tasks, color];
+  List<Object> get props => [title, text, deadlineTime, creationTime, tasks, color];
 }
 
 class DeleteDeadlineEvent extends DeadlineEvent {

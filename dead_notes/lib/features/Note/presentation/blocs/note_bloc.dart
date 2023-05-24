@@ -54,7 +54,7 @@ class NoteBloc extends Bloc<NoteEvent, NoteState> {
       id: uuid.v1(),
       title: event.title,
       text: event.text,
-      creationTime: DateTime.now(),
+      creationTime: event.creationTime,
       isFavorite: false,
       color: event.color,
     );

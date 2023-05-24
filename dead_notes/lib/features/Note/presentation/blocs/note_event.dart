@@ -12,15 +12,17 @@ class AddNoteEvent extends NoteEvent {
   final String title;
   final String text;
   final Color color;
+  final DateTime creationTime;
 
   const AddNoteEvent({
     required this.title,
     required this.text,
     required this.color,
+    required this.creationTime,
   });
 
   @override
-  List<Object> get props => [title, text, color];
+  List<Object> get props => [title, text, color, creationTime];
 }
 
 class DeleteNoteEvent extends NoteEvent {

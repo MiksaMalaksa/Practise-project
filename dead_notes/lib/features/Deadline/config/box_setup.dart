@@ -1,0 +1,1 @@
+const deadlinesBox = 'deadlines_box';
