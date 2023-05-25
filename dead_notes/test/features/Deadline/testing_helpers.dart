@@ -62,3 +62,25 @@ final tDeadlineModelList = [tDeadlineModel];
 
 // Box setup
 final tDeadlineModelJsonList = [tDeadlineModelJson];
+
+// Uuid setup
+final tUuidV1 = 'test_uuid_v1';
+
+// Input validator setup
+final tEmptyTitle = '';
+final tNoTitleDeadline = Deadline(
+  id: tDeadlineId,
+  title: tEmptyTitle,
+  text: tDeadlineText,
+  creationTime: tDeadlineDateTime,
+  modificationTime: tCreationDateTime,
+  deadlineTime: tDeadlineDateTime,
+  tasks: tDeadlineTasks,
+  isFavorite: tDeadlineIsFavorite,
+  color: tDeadlineColor,
+);
+
+// Params setup
+final tAddDeadlineParams = AddDeadlineParams(tDeadline);
+final tDeleteDeadlineParams = DeleteDeadlineParams(tDeadlineId);
+final tEditDeadlineParams = EditDeadlineParams(tDeadlineId, tDeadline);

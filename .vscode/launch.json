@@ -1,0 +1,28 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dead_notes",
+            "cwd": "dead_notes",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dead_notes (profile mode)",
+            "cwd": "dead_notes",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dead_notes (release mode)",
+            "cwd": "dead_notes",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
