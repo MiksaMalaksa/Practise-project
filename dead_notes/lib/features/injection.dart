@@ -7,6 +7,8 @@ import 'package:dead_notes/features/Deadline/domain/usecases/edit_deadline.dart'
 import 'package:dead_notes/features/Deadline/domain/usecases/get_deadlines.dart';
 import 'package:dead_notes/features/Deadline/presentation/blocs/deadline_bloc.dart';
 import 'package:dead_notes/features/Deadline/util/input_deadline_validator.dart';
+import 'package:dead_notes/features/Deadline/util/local_notice_service.dart';
+import 'package:dead_notes/features/Settings/utils/shared_preferences_utils.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:dead_notes/features/Note/config/box_setup.dart';
@@ -31,7 +33,8 @@ Future<void> init() async {
   // Utils
   sl.registerSingleton(InputValidator());
   sl.registerSingleton(InputDeadlineValidator());
-
+  sl.registerSingleton(LocalNoticeService());
+  sl.registerSingleton(SharedPreferencesUtils());
   // * EXTERNAL
   // Hive
   await Hive.initFlutter();

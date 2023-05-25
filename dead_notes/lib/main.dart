@@ -1,4 +1,6 @@
 import 'package:dead_notes/features/Deadline/presentation/blocs/deadline_bloc.dart';
+import 'package:dead_notes/features/Deadline/util/local_notice_service.dart';
+import 'package:dead_notes/features/Settings/utils/shared_preferences_utils.dart';
 import 'package:dead_notes/localization/app_localization.dart';
 import 'package:dead_notes/manager_page.dart';
 import 'package:dead_notes/theme/app_colors.dart';
@@ -7,11 +9,15 @@ import 'package:dead_notes/theme/app_theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:provider/provider.dart';
 import 'features/injection.dart';
 
 void main() async {
   await init();
+  WidgetsFlutterBinding.ensureInitialized();
+  await sl.get<LocalNoticeService>().setup();
+  PermissionStatus status = await Permission.notification.request();
   runApp(const NoteApp());
 }
 
@@ -36,6 +42,11 @@ class NoteAppState extends State<NoteApp> {
   @override
   void initState() {
     super.initState();
+    WidgetsBinding.instance?.addPostFrameCallback((_) {
+      sl.get<SharedPreferencesUtils>().getLang().then((value) {
+        setState(() => locale = Locale(value));
+      });
+    });
   }
 
   @override
