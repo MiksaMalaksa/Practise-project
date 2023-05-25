@@ -32,5 +32,7 @@
   "notes": "Заметки",
   "cancel": "Отменить",
   "add_one_task": "Добавьте хотя бы одну задачу",
-  "deadline_updated": "Дедлайн обновлен"
+  "deadline_updated": "Дедлайн обновлен",
+  "note_updated": "Заметка обновлена",
+  "deadline_list_empty": "Список дедлайнов пуст"
 }

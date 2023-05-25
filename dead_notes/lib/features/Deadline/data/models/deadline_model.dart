@@ -10,7 +10,9 @@ class DeadlineModel extends Deadline {
     required super.title,
     required super.text,
     required super.creationTime,
+    required super.modificationTime,
     required super.deadlineTime,
+    super.finishTime,
     required super.tasks,
     required super.isFavorite,
     required super.color,
@@ -22,7 +24,9 @@ class DeadlineModel extends Deadline {
       'title': title,
       'text': text,
       'creationTime': creationTime.millisecondsSinceEpoch,
+      'modificationTime': modificationTime.millisecondsSinceEpoch,
       'deadlineTime': deadlineTime.millisecondsSinceEpoch,
+      'finishTime': finishTime?.millisecondsSinceEpoch,
       'tasks': tasks.map((task) => TaskModel.toMap(task)).toList(),
       'isFavorite': isFavorite,
       'color': color.value.toRadixString(16),
@@ -36,8 +40,13 @@ class DeadlineModel extends Deadline {
       text: map['text'] as String,
       creationTime: 
           DateTime.fromMillisecondsSinceEpoch(map['creationTime'] as int),
+      modificationTime:
+          DateTime.fromMillisecondsSinceEpoch(map['modificationTime'] as int),
       deadlineTime: 
           DateTime.fromMillisecondsSinceEpoch(map['deadlineTime'] as int),
+      finishTime: map['finishTime'] != null
+          ? DateTime.fromMillisecondsSinceEpoch(map['finishTime'] as int)
+          : null,
       tasks: List<Task>.from(
           (map['tasks']).map((taskMap) => TaskModel.fromMap(taskMap))),
       isFavorite: map['isFavorite'] as bool,
@@ -56,7 +65,9 @@ class DeadlineModel extends Deadline {
       title: deadline.title,
       text: deadline.text,
       creationTime: deadline.creationTime,
+      modificationTime: deadline.modificationTime,
       deadlineTime: deadline.deadlineTime,
+      finishTime: deadline.finishTime,
       tasks: deadline.tasks,
       isFavorite: deadline.isFavorite,
       color: deadline.color,

@@ -49,6 +49,7 @@ class DeadlineListPageState extends State<DeadlineListPage> {
                       text: deadline.text,
                       color: deadline.color,
                       creationTime: deadline.creationTime,
+                      modificationTime: deadline.modificationTime,
                       deadlineTime: deadline.deadlineTime,
                       tasks: deadline.tasks,
                       isFavorite: !deadline.isFavorite,
@@ -90,7 +91,7 @@ class DeadlineListPageState extends State<DeadlineListPage> {
                   },
                   child: Container(
                     margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                    padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
                     width: MediaQuery.of(context).size.width,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),

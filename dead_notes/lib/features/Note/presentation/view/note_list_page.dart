@@ -1,4 +1,5 @@
 import 'package:dead_notes/features/Note/presentation/blocs/note_bloc.dart';
+import 'package:dead_notes/features/Note/presentation/view/note_page.dart';
 import 'package:dead_notes/features/injection.dart';
 import 'package:dead_notes/localization/app_localization_constants.dart';
 import 'package:dead_notes/widgets/top_bar.dart';
@@ -81,22 +82,27 @@ class NoteListPageState extends State<NoteListPage> {
                       child: const Icon(Icons.delete, color: Colors.white),
                     ),
                   ),
-                  child: Container(
-                    margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
-                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-                    width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                        color: state.notes[index].color
-                    ),
-                    child: Row(
-                      children: [
-                        note.isFavorite ? const Padding(
-                          padding: EdgeInsets.only(right: 10),
-                          child: Icon(Icons.flag, color: Colors.white),
-                        ) : Container(),
-                        Expanded(child: Text(note.title)),
-                      ],
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => NotePage(note: note,))).then((value) => _bloc.add(const GetNotesEvent()));
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 15),
+                      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 25),
+                      width: MediaQuery.of(context).size.width,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          color: state.notes[index].color
+                      ),
+                      child: Row(
+                        children: [
+                          note.isFavorite ? const Padding(
+                            padding: EdgeInsets.only(right: 10),
+                            child: Icon(Icons.flag, color: Colors.white),
+                          ) : Container(),
+                          Expanded(child: Text(note.title)),
+                        ],
+                      ),
                     ),
                   )
               );

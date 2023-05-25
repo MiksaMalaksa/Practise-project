@@ -9,7 +9,9 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 
 class NotePage extends StatefulWidget {
-  const NotePage({super.key});
+  final Note? note;
+
+  const NotePage({super.key, this.note});
 
   @override
   NotePageState createState() => NotePageState();
@@ -18,11 +20,21 @@ class NotePage extends StatefulWidget {
 class NotePageState extends State<NotePage> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-  DateTime _noteTime = DateTime.now();
-  List<TextEditingController> _tasksControllers = [];
   Color? _noteColor;
-  NoteBloc _bloc = sl.get<NoteBloc>();
+  final NoteBloc _bloc = sl.get<NoteBloc>();
   DateTime? _creationTime;
+  bool editing = false;
+
+  @override
+  void initState() {
+    if (widget.note != null) {
+      _titleController.text = widget.note!.title;
+      _descriptionController.text = widget.note!.text;
+      _creationTime = widget.note!.creationTime;
+      editing = true;
+    }
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +48,7 @@ class NotePageState extends State<NotePage> {
           if (state is Loaded && state.notes.isNotEmpty && _creationTime != null) {
             final matches = state.notes.where((e) => e.creationTime.difference(_creationTime!).inSeconds.abs() < 60).toList();
             if (matches.isNotEmpty) {
-              Fluttertoast.showToast(msg: newNoteAddedLocalize(context));
+              Fluttertoast.showToast(msg: editing ? noteUpdatedLocalize(context) : newNoteAddedLocalize(context));
               Navigator.of(context).pop();
             }
           }
@@ -66,24 +78,45 @@ class NotePageState extends State<NotePage> {
                   const SizedBox(height: 15,),
                   Text(selectColorLocalize(context), style: Theme.of(context).textTheme.titleMedium,),
                   const SizedBox(height: 10,),
-                  ColorSwitcher(onChange: (value) {
+                  ColorSwitcher(selectedColor: widget.note?.color, onChange: (value) {
                     setState(() {
                       _noteColor = value;
                     });
                   },),
-                  const SizedBox(height: 15,),
+                  const SizedBox(height: 30,),
                   RoundedButton(title: saveLocalize(context), onTap: () {
                     _creationTime = DateTime.now();
-                    _bloc.add(
-                      AddNoteEvent(
-                        title: _titleController.text,
-                        text: _descriptionController.text,
-                        creationTime: _creationTime!,
-                        color: _noteColor ?? Theme.of(context).primaryColor,
-                      ),
-                    );
-                  },
+                    if (editing && widget.note != null) {
+                      _bloc.add(
+                        EditNoteEvent(
+                          id: widget.note!.id,
+                          title: _titleController.text,
+                          text: _descriptionController.text,
+                          creationTime: _creationTime!,
+                          color: _noteColor ?? Theme.of(context).primaryColor,
+                          isFavorite: widget.note!.isFavorite,
+                        ),
+                      );
+                    } else {
+                      _bloc.add(
+                        AddNoteEvent(
+                          title: _titleController.text,
+                          text: _descriptionController.text,
+                          creationTime: _creationTime!,
+                          color: _noteColor ?? Theme.of(context).primaryColor,
+                        ),
+                      );
+                    }
+                  }),
+                  const SizedBox(height: 15,),
+                  RoundedButton(
+                    color: Colors.grey,
+                    title: cancelLocalize(context),
+                    onTap: () {
+                      Navigator.of(context).pop();
+                    },
                   ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),

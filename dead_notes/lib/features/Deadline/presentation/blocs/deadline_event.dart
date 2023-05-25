@@ -4,7 +4,7 @@ abstract class DeadlineEvent extends Equatable {
   const DeadlineEvent();
 
   @override
-  List<Object> get props => [];
+  List<Object?> get props => [];
 }
 
 class AddDeadlineEvent extends DeadlineEvent {
@@ -46,7 +46,9 @@ class EditDeadlineEvent extends DeadlineEvent {
   final Color color;
   final bool isFavorite;
   final DateTime creationTime;
+  final DateTime modificationTime;
   final DateTime deadlineTime;
+  final DateTime? finishTime;
   final List<Task> tasks;
 
   const EditDeadlineEvent({
@@ -56,12 +58,14 @@ class EditDeadlineEvent extends DeadlineEvent {
     required this.color,
     required this.isFavorite,
     required this.creationTime,
+    required this.modificationTime,
     required this.deadlineTime,
+    this.finishTime,
     required this.tasks,
   });
 
   @override
-  List<Object> get props => [id, title, text, color, deadlineTime, tasks];
+  List<Object?> get props => [id, title, text, color, deadlineTime, modificationTime, finishTime, tasks];
 }
 
 class GetDeadlinesEvent extends DeadlineEvent {

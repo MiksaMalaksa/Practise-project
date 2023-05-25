@@ -25,7 +25,7 @@ class DeadlinePageState extends State<DeadlinePage> {
   List<bool> _taskStatuses = [];
   Color? _deadlineColor;
   final DeadlineBloc _bloc = sl.get<DeadlineBloc>();
-  DateTime? _creationTime;
+  DateTime? _modificationTime;
 
   bool editing = false;
 
@@ -36,10 +36,10 @@ class DeadlinePageState extends State<DeadlinePage> {
       _descriptionController.text = widget.deadline!.text;
       _deadlineTime = widget.deadline!.deadlineTime;
       _deadlineTimeController.text = DateFormat.yMMMd().format(_deadlineTime);
-      _creationTime = widget.deadline!.creationTime;
+      _modificationTime = widget.deadline!.modificationTime;
       _tasksControllers.addAll(List.generate(widget.deadline!.tasks.length, (index) => TextEditingController(text: widget.deadline!.tasks[index].text)));
       _taskStatuses.addAll(List.generate(widget.deadline!.tasks.length, (index) => widget.deadline!.tasks[index].isDone));
-
+      _deadlineColor = widget.deadline!.color;
       editing = true;
     }
     super.initState();
@@ -54,8 +54,8 @@ class DeadlinePageState extends State<DeadlinePage> {
         if (state is Error) {
           Fluttertoast.showToast(msg: state.error);
         }
-        if (state is Loaded && state.deadlines.isNotEmpty && _creationTime != null) {
-          final matches = state.deadlines.where((e) => e.creationTime.difference(_creationTime!).inSeconds.abs() < 5).toList();
+        if (state is Loaded && state.deadlines.isNotEmpty && _modificationTime != null) {
+          final matches = state.deadlines.where((e) => e.modificationTime.difference(_modificationTime!).inSeconds.abs() < 5).toList();
           if (matches.isNotEmpty) {
             Fluttertoast.showToast(msg: editing ? deadlineUpdatedLocalize(context) : newDeadlineAddedLocalize(context));
             Navigator.of(context).pop();
@@ -177,11 +177,15 @@ class DeadlinePageState extends State<DeadlinePage> {
                       Fluttertoast.showToast(msg: addOneTaskLocalize(context));
                       return;
                     }
-                    _creationTime = DateTime.now();
+                    _modificationTime = DateTime.now();
                     if (editing && widget.deadline != null) {
                       final List<Task> tasks = [];
                       for (int i = 0; i < _tasksControllers.length; i++) {
                         tasks.add(Task(text: _tasksControllers[i].text, isDone: _taskStatuses[i]));
+                      }
+                      DateTime? finishTime;
+                      if (tasks.where((e) => !e.isDone).isEmpty) {
+                        finishTime = _modificationTime;
                       }
                       _bloc.add(
                         EditDeadlineEvent(
@@ -190,7 +194,9 @@ class DeadlinePageState extends State<DeadlinePage> {
                           title: _titleController.text,
                           text: _descriptionController.text,
                           deadlineTime: _deadlineTime,
-                          creationTime: _creationTime!,
+                          creationTime: widget.deadline!.creationTime,
+                          modificationTime: _modificationTime!,
+                          finishTime: finishTime,
                           tasks: tasks,
                           color: _deadlineColor ?? Theme.of(context).primaryColor,
                         ),
@@ -201,7 +207,7 @@ class DeadlinePageState extends State<DeadlinePage> {
                           title: _titleController.text,
                           text: _descriptionController.text,
                           deadlineTime: _deadlineTime,
-                          creationTime: _creationTime!,
+                          creationTime: _modificationTime!,
                           tasks: _tasksControllers.map((e) => Task(text: e.text)).toList(),
                           color: _deadlineColor ?? Theme.of(context).primaryColor,
                         ),

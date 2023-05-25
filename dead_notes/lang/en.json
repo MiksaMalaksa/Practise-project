@@ -32,5 +32,7 @@
   "notes": "Notes",
   "cancel": "Cancel",
   "add_one_task": "Add at least one task",
-  "deadline_updated": "Deadline was updated"
+  "deadline_updated": "Deadline was updated",
+  "note_updated": "Note was updated",
+  "deadline_list_empty": "Deadline list is empty"
 }

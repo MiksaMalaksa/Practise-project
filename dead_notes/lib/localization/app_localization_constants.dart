@@ -140,3 +140,11 @@ String addOneTaskLocalize(BuildContext context) {
 String deadlineUpdatedLocalize(BuildContext context) {
   return AppLocalizations.of(context).translate('deadline_updated');
 }
+
+String noteUpdatedLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('note_updated');
+}
+
+String deadlineListEmptyLocalize(BuildContext context) {
+  return AppLocalizations.of(context).translate('deadline_list_empty');
+}

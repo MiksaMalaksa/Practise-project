@@ -7,7 +7,9 @@ class Deadline extends Equatable {
   final String title;
   final String text;
   final DateTime creationTime;
+  final DateTime modificationTime;
   final DateTime deadlineTime;
+  final DateTime? finishTime;
   final List<Task> tasks;
 
   final bool isFavorite;
@@ -18,20 +20,24 @@ class Deadline extends Equatable {
     required this.title,
     required this.text,
     required this.creationTime,
+    required this.modificationTime,
     required this.deadlineTime,
+    this.finishTime,
     required this.tasks,
     required this.isFavorite,
     required this.color,
   });
 
   @override
-  List<Object> get props {
+  List<Object?> get props {
     return [
       id,
       title,
       text,
       creationTime,
+      modificationTime,
       deadlineTime,
+      finishTime,
       tasks,
       isFavorite,
       color,

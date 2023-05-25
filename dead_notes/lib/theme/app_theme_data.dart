@@ -37,6 +37,7 @@ class AppThemeData {
       bodyMedium: TextStyle(
         color: Colors.white,
         fontSize: 16.0,
+        fontFamily: 'Nunito',
       ),
     ),
   );
@@ -75,6 +76,7 @@ class AppThemeData {
       bodyMedium: TextStyle(
         color: Colors.white,
         fontSize: 16.0,
+        fontFamily: 'Nunito',
       ),
     ),
   );
